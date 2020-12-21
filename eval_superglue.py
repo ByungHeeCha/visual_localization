@@ -75,7 +75,7 @@ def local_match(neighbor, q_dataset, db_dataset):
     superPointdict=dict()
     superPointdict["nms_radius"]=4
     superPointdict["keypoint_threshold"]= 0.005
-    superPointdict["max_keypoints"]=1024
+    superPointdict["max_keypoints"]=512
     superpoint = models.SuperPoint(superPointdict)
     superpoint.cuda()
     superpoint.eval()
@@ -87,7 +87,7 @@ def local_match(neighbor, q_dataset, db_dataset):
     superglue.cuda()
     superglue.eval()
     for q, indices in enumerate(pbar):
-        if q >= 101: break
+        # if q >= 101: break
         q_img = q_dataset[q].cuda()
         with torch.no_grad():
             featq = superpoint({'image': q_img.unsqueeze(0)})
