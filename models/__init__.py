@@ -1,0 +1,1 @@
+from .netvlad import NetVLAD

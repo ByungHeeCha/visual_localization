@@ -70,6 +70,9 @@ def extract_features(db, net, trfs, pooling='mean', gemp=3, detailed=False, whit
 
 def load_model(path, iscuda):
     checkpoint = common.load_checkpoint(path, iscuda)
+    if path=='checkpoints/checkpoint.pth.tar':
+        checkpoint['model_options'] = {'arch': 'NetVLAD'}
+        # json.load(open("/home/pilryungcha/visual_localization/checkpoints/vgg16_netvlad_checkpoint/checkpoints/flags.json"))
     net = nets.create_model(pretrained="", **checkpoint['model_options'])
     net = common.switch_model_to_cuda(net, iscuda, checkpoint)
     net.load_state_dict(checkpoint['state_dict'])
