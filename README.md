@@ -21,7 +21,7 @@ Arguments:
 
 Example:
 ```
-python extract_feature.py --floor b1 --globaldesc apgem --batchsize 32 \
+python extract_feature.py --floor b1 --globaldesc netvlad --batchsize 32 \
 --dataset_path ../dataset ----checkpoint_path ../checkpoints/vgg16_netvlad_checkpoint/checkpoints/checkpoint.pth.tar
 ```
 It saves global descriptor of each db and query image as 2d numpy array. The saved file name is `{globaldesc}_db_{floor}_features.npy` and `{globaldesc}_query_{floor}_features.npy`
@@ -41,7 +41,7 @@ Arguments:
 
 Example:
 ```
-python eval.py --floor b1 --globaldesc netvlad --rank_knn_num 10 \
+python eval.py --floor b1 --globaldesc apgem --rank_knn_num 10 \
 --rerank_knn_num 5 --dataset_path ../dataset
 ```
 
@@ -63,7 +63,7 @@ Arguments:
 
 Example:
 ```
-python eval_superglue.py --floor b1 --globaldesc netvlad --rank_knn_num 10 \
+python eval_superglue.py --floor b1 --globaldesc apgem --rank_knn_num 10 \
 --rerank_knn_num 5 --dataset_path ../dataset
 ```
 
