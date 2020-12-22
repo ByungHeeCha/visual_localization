@@ -87,7 +87,6 @@ def local_match(neighbor, q_dataset, db_dataset):
     superglue.cuda()
     superglue.eval()
     for q, indices in enumerate(pbar):
-        # if q >= 101: break
         q_img = q_dataset[q].cuda()
         with torch.no_grad():
             featq = superpoint({'image': q_img.unsqueeze(0)})
