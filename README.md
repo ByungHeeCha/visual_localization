@@ -53,7 +53,7 @@ It saves answer as json file with name `{globaldesc}_rootsift_rank_knn_num_{rank
 ### `eval_superglue.py`
 This part performs pose estimation using SuperGlue. It need result of `extract_features.py`.
 ```
-usage: eval.py [-h] [--floor FLOOR] [--globaldesc GLOBALDESC] [--rank_knn_num RANK_KNN_NUM] 
+usage: eval_superglue.py [-h] [--floor FLOOR] [--globaldesc GLOBALDESC] [--rank_knn_num RANK_KNN_NUM] 
                [--rerank_knn_num RERANK_KNN_NUM] [--dataset_path DATASET_PATH]
 ```
 Arguments:
