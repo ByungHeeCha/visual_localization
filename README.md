@@ -1,6 +1,8 @@
 # visual_localization
 
-visual_localization conntains 3 parts:
+Visual localization code suitable for Hyundai dataset in naver labs challenge.
+
+visual_localization contains 3 parts:
  * `extract_features.py`
  * `eval.py`
  * `eval_superglue.py`
